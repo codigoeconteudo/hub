@@ -1,6 +1,11 @@
 {
   "applications": [
     {
+      "title": "Blog do Código e Conteúdo",
+      "url": "https://codigoeconteudo.com.br",
+      "description": "Veja os conteúdos compartilhados pelo CEC."
+    },
+    {
       "title": "Consulta Fácil CNPJ",
       "url": "https://codigoeconteudo.com.br/hub-consulta-facil-cnpj/",
       "description": "Consulte dados de CNPJ de modo fácil e rápido."
@@ -13,3 +18,4 @@
   ]
 
 }
+
