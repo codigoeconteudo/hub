@@ -1,14 +1,15 @@
 {
   "applications": [
     {
-      "title": "Academy Grupo Rivesa",
-      "url": "https://academy.example.com",
-      "description": "Ambiente Virtual de Aprendizagem."
+      "title": "Consulta Fácil CNPJ",
+      "url": "https://codigoeconteudo.com.br/hub-consulta-facil-cnpj/",
+      "description": "Consulte dados de CNPJ de modo fácil e rápido."
     },
     {
-      "title": "Arquivos Marketing",
-      "url": "https://arquivos.example.com",
-      "description": "Logos, modelos, fontes e guides."
+      "title": "Gerador de Lorem Ipsum",
+      "url": "https://codigoeconteudo.com.br/hub-lorem-ipsum-generator/",
+      "description": "Gere seu texto Lorem Ipsum para testes."
     }
   ]
+
 }
