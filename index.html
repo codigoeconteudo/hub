@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Aplicações</title>
+  <title>Portal de Aplicações do Código e Conteúdo</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+<body class="bg-black text-gray-100 min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-4 bg-gray-800 shadow-md">
-    <div class="flex items-center space-x-3">
-      <img src="https://avatars.githubusercontent.com/u/109876465?s=400&u=637fbf69173da933810f9340b11854c4c35e344b&v=4" alt="Logo" class="w-10 h-10 rounded">
-      <h1 class="text-xl font-semibold">Portal de Aplicações do Código e Conteúdo</h1>
+  <header class="bg-black border-b border-gray-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="https://avatars.githubusercontent.com/u/109876465?s=400&u=637fbf69173da933810f9340b11854c4c35e344b&v=4" alt="Logo" class="w-10 h-10 rounded">
+        <h1 class="text-xl font-semibold">Portal de Aplicações do Código e Conteúdo</h1>
+      </div>
+      <input 
+        id="searchInput" 
+        type="text" 
+        placeholder="Pesquisar aplicações..." 
+        class="px-4 py-2 w-64 rounded-lg bg-neutral-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
     </div>
-    <input 
-      id="searchInput" 
-      type="text" 
-      placeholder="Pesquisar aplicações..." 
-      class="px-4 py-2 w-64 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   </header>
 
   <!-- Conteúdo -->
-  <main class="flex-1 p-6">
-    <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  <main class="flex-1 py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
   </main>
 
   <script>
@@ -48,7 +52,7 @@
         const card = document.createElement("a");
         card.href = app.url;
         card.target = "_blank";
-        card.className = "block bg-gray-800 rounded-xl p-5 shadow hover:shadow-lg hover:bg-gray-700 transition";
+        card.className = "block bg-neutral-900 border border-gray-800 rounded-xl p-5 shadow hover:shadow-lg hover:bg-neutral-800 transition";
 
         card.innerHTML = `
           <h2 class="text-lg font-semibold mb-2">${app.title}</h2>
