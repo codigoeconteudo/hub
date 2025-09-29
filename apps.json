@@ -1,0 +1,14 @@
+{
+  "applications": [
+    {
+      "title": "Academy Grupo Rivesa",
+      "url": "https://academy.example.com",
+      "description": "Ambiente Virtual de Aprendizagem."
+    },
+    {
+      "title": "Arquivos Marketing",
+      "url": "https://arquivos.example.com",
+      "description": "Logos, modelos, fontes e guides."
+    }
+  ]
+}
