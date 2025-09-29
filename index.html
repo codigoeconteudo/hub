@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Aplicações do Código e Conteúdo</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-gray-100 min-h-screen flex flex-col">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="bg-black border-b border-gray-800">
+  <header class="bg-gray-200 border-b border-gray-300 shadow">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center space-x-3">
-        <img src="https://avatars.githubusercontent.com/u/109876465?s=400&u=637fbf69173da933810f9340b11854c4c35e344b&v=4" alt="Logo" class="w-10 h-10 rounded">
-        <h1 class="text-xl font-semibold">Portal de Aplicações do Código e Conteúdo</h1>
+        <img src="https://avatars.githubusercontent.com/u/109876465?s=400&u=637fbf69173da933810f9340b11854c4c35e344b&v=4" alt="Logo" class="w-8 h-8 rounded">
+        <h1 class="text-lg font-semibold">&nbsp;&nbsp;Portal de Aplicações do Código e Conteúdo</h1>
       </div>
       <input 
         id="searchInput" 
         type="text" 
         placeholder="Pesquisar aplicações..." 
-        class="px-4 py-2 w-64 rounded-lg bg-neutral-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        class="px-3 py-2 w-64 rounded-lg bg-white border border-none border-0 border-gray-300 focus:outline-none shadow-sm">
     </div>
   </header>
 
   <!-- Conteúdo -->
   <main class="flex-1 py-8">
     <div class="max-w-6xl mx-auto px-6">
-      <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
   </main>
+
+	<div class="">
+
+	    <div class="py-8 text-center max-w-7xl mx-auto">
+
+	        <h1 class="text-4sm font-semibold">Código e Conteúdo</h1>
+
+	        <p class="w-4/5 mx-auto my-4 md:w-3/5 lg:w-2/5">
+	            Código e Conteúdo é um projeto de estudos, desenvolvimento e tecnologia, mantido com dedicação por <a href="https://gabrielsouza.dev.br" target="_blank">@gsdesenvolvedor</a>.
+	        </p>
+
+	    </div>
+
+	    <div class="text-center py-1 max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-600">
+
+	        <p class="w-4/5 mx-auto my-5 text-sm leading-5"> 
+	            @ 2022 Todos os direitos reservados ao Código e Conteúdo.
+	        </p>
+
+	    </div>
+
+	</div>
 
   <script>
     // URL do JSON
@@ -52,11 +74,11 @@
         const card = document.createElement("a");
         card.href = app.url;
         card.target = "_blank";
-        card.className = "block bg-neutral-900 border border-gray-800 rounded-xl p-5 shadow hover:shadow-lg hover:bg-neutral-800 transition";
+        card.className = "block bg-white rounded-xl p-5 shadow hover:shadow border border-gray-200 hover:bg-gray-50 transition shadow";
 
         card.innerHTML = `
           <h2 class="text-lg font-semibold mb-2">${app.title}</h2>
-          <p class="text-sm text-gray-400">${app.description}</p>
+          <p class="text-sm text-gray-600">${app.description}</p>
         `;
 
         grid.appendChild(card);
