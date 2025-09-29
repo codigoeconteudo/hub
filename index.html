@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Aplicações</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4 bg-gray-800 shadow-md">
+    <div class="flex items-center space-x-3">
+      <img src="https://via.placeholder.com/40" alt="Logo" class="w-10 h-10 rounded">
+      <h1 class="text-xl font-bold">Portal de Aplicações</h1>
+    </div>
+    <input 
+      id="searchInput" 
+      type="text" 
+      placeholder="Pesquisar aplicações..." 
+      class="px-4 py-2 w-64 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+  </header>
+
+  <!-- Conteúdo -->
+  <main class="flex-1 p-6">
+    <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </main>
+
+  <script>
+    // URL do JSON
+    const DATA_URL = "https://raw.githubusercontent.com/codigoeconteudo/hub/refs/heads/main/apps.json";
+
+    async function loadApplications() {
+      try {
+        const res = await fetch(DATA_URL);
+        const data = await res.json();
+        renderApplications(data.applications);
+      } catch (error) {
+        console.error("Erro ao carregar JSON:", error);
+      }
+    }
+
+    function renderApplications(apps) {
+      const grid = document.getElementById("appGrid");
+      grid.innerHTML = "";
+
+      apps.forEach(app => {
+        const card = document.createElement("a");
+        card.href = app.url;
+        card.target = "_blank";
+        card.className = "block bg-gray-800 rounded-xl p-5 shadow hover:shadow-lg hover:bg-gray-700 transition";
+
+        card.innerHTML = `
+          <h2 class="text-lg font-semibold mb-2">${app.title}</h2>
+          <p class="text-sm text-gray-400">${app.description}</p>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function setupSearch() {
+      const input = document.getElementById("searchInput");
+      input.addEventListener("input", async () => {
+        const res = await fetch(DATA_URL);
+        const data = await res.json();
+        const query = input.value.toLowerCase();
+        const filtered = data.applications.filter(app =>
+          app.title.toLowerCase().includes(query) ||
+          app.description.toLowerCase().includes(query)
+        );
+        renderApplications(filtered);
+      });
+    }
+
+    loadApplications();
+    setupSearch();
+  </script>
+</body>
+</html>
